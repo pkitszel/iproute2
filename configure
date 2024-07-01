@@ -615,6 +615,9 @@ check_cap
 echo -n "color output: "
 check_color
 
+# must be after check_color
+echo "include ../common.mk" >> $CONFIG
+
 echo >> $CONFIG
 echo "%.o: %.c" >> $CONFIG
 echo '	$(QUIET_CC)$(CC) $(CFLAGS) $(EXTRA_CFLAGS) $(CPPFLAGS) -c -o $@ $<' >> $CONFIG
